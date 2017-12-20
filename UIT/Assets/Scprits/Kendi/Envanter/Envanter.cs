@@ -34,7 +34,6 @@ public class Envanter : MonoBehaviour {
         ItemEkleme(5, 4);
 
     }
-
     void Update()
     {
         if (toolTipBool)
@@ -52,7 +51,6 @@ public class Envanter : MonoBehaviour {
         }
         
     }
-
     public void SuruklenenGoster(Item item)
     {
         surukleItem = item;
@@ -64,20 +62,17 @@ public class Envanter : MonoBehaviour {
         surukleItemBool = false;
         surukleItemObj.SetActive(false);
     }
-
     public void ToolTipGoster(Item item)
     {
         toolTipItem = item;
         toolTipBool = true;
         toolTip.SetActive(true);
     }
-
     public void GizleToolTip()
     {
         toolTipBool = false;
         toolTip.SetActive(false);
     }
-
     public void ItemEkleme(int kimlik, int deger)
     {
         for(int i = 0; i < dataBase.itemler.Count; i++)
@@ -107,7 +102,6 @@ public class Envanter : MonoBehaviour {
             }
         }
     }
-
     void UstuneEkleme(Item item)
     {
         for(int i =0; i < itemler.Count; i++)
