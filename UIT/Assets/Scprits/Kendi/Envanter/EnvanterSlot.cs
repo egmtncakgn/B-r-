@@ -26,7 +26,6 @@ public class EnvanterSlot : MonoBehaviour,
         itemResim = transform.GetChild(0).GetComponent<Image>();
         itemDeger = transform.GetChild(1).GetComponent<Text>();
     }
-
     void Update()
     {
         item = envanter.itemler[slotSayi];
@@ -53,7 +52,6 @@ public class EnvanterSlot : MonoBehaviour,
         }
         
     }
-
     public void OnPointerEnter(PointerEventData data)
     {
         if (item.itemAdi != null)
@@ -65,7 +63,6 @@ public class EnvanterSlot : MonoBehaviour,
     {
         envanter.GizleToolTip();
     }
-
     public void OnPointerDown(PointerEventData data)
     {
         if (data.button.ToString() == "Left")
@@ -84,13 +81,41 @@ public class EnvanterSlot : MonoBehaviour,
                 }
                 else if (item.itemAdi != null)
                 {
-                    Item newItem = envanter.itemler[slotSayi];
-
-                    envanter.SuruklenenGizle();
+                    if (item.itemTip == Item.ItemTip.Yiyecek)
+					{
+						if (item.itemAdi == envanter.surukleItem.itemAdi)
+						{
+							envanter.itemler[slotSayi].itemDeger += envanter.surukleItem.itemDeger;
+							envanter.SuruklenenGizle();
+						}
+					}
+					else
+					{
+						Item newItem = envanter.itemler[slotSayi];
+					    envanter.itemler[slotSayi] = envanter.surukleItem;
+					    envanter.surukleItem = newItem;
+					}
                 }
-                
             }
         }
+		if (data.button.ToString() == "Right")
+		{
+			if (!envanter.surukleItemBool)
+            {
+				if (item.itemTip == Item.ItemTip.Yiyecek)
+				{
+					int value = item.itemDeger / 2;					
+					Item newItem = new Item(item.itemAdi, item.itemAciklama, item.itemKimlik, item.itemHasar, item.itemZirh, item.itemDeger, item.itemMaxStok, item.itemAgirlik, item.itemTip);
+					envanter.SuruklenenGoster(newItem);
+					int value2 = item.itemDeger - value;
+					envanter.itemler[slotSayi].itemDeger = value2;
+				}
+            }
+            else if(envanter.surukleItemBool)
+            {
+                
+            }
+		}
     }
     public void OnDrag(PointerEventData data)
     {
