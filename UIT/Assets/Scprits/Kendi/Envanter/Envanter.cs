@@ -118,7 +118,6 @@ public class Envanter : MonoBehaviour {
             }
         }
     }
-
     void BosSlotaItemEkle(Item item)
     {
         for (int i = 0; i < itemler.Count; i++)
