@@ -14,6 +14,8 @@ public class Envanter : MonoBehaviour {
 
     public bool toolTipBool, surukleItemBool;
     public Item toolTipItem, surukleItem;
+	
+	public DropItem dropItem;
 
     void Start()
     {
@@ -28,10 +30,11 @@ public class Envanter : MonoBehaviour {
             itemler.Add(new Item());
         }
 
-        ItemEkleme(3, 4);
-        ItemEkleme(5, 4);
         ItemEkleme(1, 4);
-        ItemEkleme(5, 4);
+
+    
+    
+    
 
     }
     void Update()
@@ -49,7 +52,14 @@ public class Envanter : MonoBehaviour {
             surukleItemObj.transform.GetChild(1).GetComponent<Text>().text = surukleItem.itemDeger.ToString();
             surukleItemObj.gameObject.GetComponent<RectTransform>().position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
         }
-        
+		if (surukleItem.itemDeger > 1)
+        {
+			surukleItemObj.transform.GetChild(1).GetComponent<Text>().enabled = true;
+		}
+		else if (surukleItem.itemDeger <= 1)
+		{
+			surukleItemObj.transform.GetChild(1).GetComponent<Text>().enabled = false;
+		}
     }
     public void SuruklenenGoster(Item item)
     {
@@ -93,12 +103,30 @@ public class Envanter : MonoBehaviour {
                     UstuneEkleme(item);
                     break;
                 }
-                else
+                else if (item.itemDeger > item.itemMaxStok)//24.52
+                {
+					int itemD = item.itemDeger-1;
+					Item itemm = new Item(item.itemAdi, 
+                                          item.itemAciklama,
+                                          item.itemKimlik,
+                                          item.itemHasar,
+                                          item.itemZirh,
+                                          itemD,
+                                          item.itemMaxStok,
+                                          item.itemAgirlik,
+                                          item.itemTip);
+										  
+					item.itemDeger = 1;
+                    UstuneEkleme(item);
+					BosSlotaItemEkle(item);
+					ItemEkleme(itemm.itemKimlik, itemm.itemDeger);
+                    break;
+                }
+				else 
                 {
                     BosSlotaItemEkle(item);
                     break;
                 }
-                
             }
         }
     }
@@ -125,8 +153,9 @@ public class Envanter : MonoBehaviour {
             if(itemler[i].itemAdi == null)
             {
                 itemler[i] = item;
-                break;
+                return;
             }
         } 
+		dropItem.ItemDrop(item);
     }
 }

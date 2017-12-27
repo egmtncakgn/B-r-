@@ -8,6 +8,8 @@ TagManager:
   - ItemDataBase
   - EnvanterSlot
   - "S\xFCr\xFCkleItem"
+  - Fire
+  - DropItem
   layers:
   - Default
   - TransparentFX

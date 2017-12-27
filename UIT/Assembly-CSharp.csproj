@@ -51,11 +51,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\com\heparo\terrain\toolkit\scripts\TerrainToolkit.cs" />
+     <Compile Include="Assets\Fp\com\heparo\terrain\toolkit\scripts\TerrainToolkit.cs" />
+     <Compile Include="Assets\Scprits\Kendi\Envanter\DropItem\DropItem.cs" />
+     <Compile Include="Assets\Scprits\Kendi\Envanter\DropItem\DropItemObj.cs" />
      <Compile Include="Assets\Scprits\Kendi\Envanter\Envanter.cs" />
      <Compile Include="Assets\Scprits\Kendi\Envanter\EnvanterSlot.cs" />
      <Compile Include="Assets\Scprits\Kendi\Envanter\Item\Item.cs" />
      <Compile Include="Assets\Scprits\Kendi\Envanter\Item\ItemDataBase.cs" />
+     <Compile Include="Assets\Scprits\Kendi\GameManager\GameManager.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>E:/Program Dosyaları/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

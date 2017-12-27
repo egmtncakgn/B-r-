@@ -105,7 +105,7 @@ public class EnvanterSlot : MonoBehaviour,
 				if (item.itemTip == Item.ItemTip.Yiyecek)
 				{
 					int value = item.itemDeger / 2;					
-					Item newItem = new Item(item.itemAdi, item.itemAciklama, item.itemKimlik, item.itemHasar, item.itemZirh, item.itemDeger, item.itemMaxStok, item.itemAgirlik, item.itemTip);
+					Item newItem = new Item(item.itemAdi, item.itemAciklama, item.itemKimlik, item.itemHasar, item.itemZirh, value, item.itemMaxStok, item.itemAgirlik, item.itemTip);
 					envanter.SuruklenenGoster(newItem);
 					int value2 = item.itemDeger - value;
 					envanter.itemler[slotSayi].itemDeger = value2;

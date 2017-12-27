@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/UICre/EnvUICre.unity
+- path: Assets/Scenes/Login Menu.unity
   isLoaded: 1
   isActive: 1

@@ -124,8 +124,6 @@
      <Compile Include="Assets\Scripts\Hazır\Stats\Stat.cs" />
      <Compile Include="Assets\Scripts\Hazır\Stats\StatModifier.cs" />
      <Compile Include="Assets\Scripts\Hazır\TreasureChest.cs" />
-     <Compile Include="Assets\Scripts\Kendi\Envanter\IItem.cs" />
-     <Compile Include="Assets\Scripts\Kendi\Envanter\IItemDataBase.cs" />
      <Compile Include="Assets\Scripts\Kendi\Giriş\LevelManager.cs" />
      <Compile Include="Assets\Scripts\Kendi\Giriş\Login.cs" />
      <Compile Include="Assets\Scripts\Kendi\Giriş\PanelS.cs" />

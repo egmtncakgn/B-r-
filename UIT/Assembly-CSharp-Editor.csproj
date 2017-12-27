@@ -51,7 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\com\heparo\terrain\toolkit\editor\TerrainToolkitEditor.cs" />
+     <Compile Include="Assets\Fp\com\heparo\terrain\toolkit\editor\TerrainToolkitEditor.cs" />
  <Reference Include="Assembly-UnityScript">
  <HintPath>E:/Depo/B-r-/UIT/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
  </Reference>
